@@ -1,3 +1,82 @@
 <html>
-    <title>Hello</title>
+
+<head>
+    <link rel="stylesheet" href="index.css" />
+    <meta charset="UTF-8" />
+    <title>Events | Math Society</title>
+</head>
+
+<body class="screen">
+
+    <div class="navbar">
+        <h2>Math Society</h2>
+        <div>
+            <button class="navbarbtn">Events</button>
+            <button class="navbarbtn">Sign Up</button>
+            <button class="navbarbtn">Log in</button>
+        </div>
+    </div>
+
+
+    <div class="web-body">
+        <div class="sections left-section">
+            <img class="hero" src="HD-wallpaper-math-math-teacher.jpg" />
+
+            <div class="text">
+                <h1 >Chaos Theory and <span class="effect">Butterfly Effect</span>.</h1>
+                <h5><span class="font"></span>What if one small decision actually mattered?</h5>
+                <h5><span class="font"></span> Dr. Ivan Ovsyannikov</h5>
+                <h5><span class="font"></span>Tuesday 3rd March 2026</h5>
+                <h5><span class="font"></span> IRC Seminar Room I</h5>
+            </div>
+
+        </div>
+
+        <div class="sections right-section">
+            <div class="signupform">
+                <div class="inputs">
+                    <input placeholder="Name: " id="name" class="inputbar" />
+                    <input placeholder="Email: " id="email" class="inputbar" />
+                    <input placeholder="Programme, e.g SDT, CS, Math: " id="programme" class="inputbar" />
+                </div>
+                <button class="Registerbtn">Register</button>
+            </div>
+
+            <script>
+                var nameInput = document.getElementById("name");
+                var emailInput = document.getElementById("email");
+                var programmeInput = document.getElementById("programme");
+                var registerbtn = document.querySelector(".Registerbtn");
+
+                var users = [];
+
+                registerbtn.addEventListener("click", function (event) {
+                    event.preventDefault();
+
+                    if (!nameInput.value.trim() || !emailInput.value.trim() || !programmeInput.value.trim()) {
+                        alert("Please fill in all blanks");
+                        return;
+
+                    } else {
+
+                        var user = {
+                            name: nameInput.value.trim(),
+                            email: emailInput.value.trim(),
+                            programme: programmeInput.value.trim()
+                        }
+
+                        alert("Thank you for registering, ", user.name, "!");
+                        users.push(user);
+                        console.log(users);
+                    }
+                })
+
+
+            </script>
+        </div>
+    </div>
+
+    <footer class="footer">Math Society @ 2026 | Constructor University Bremen</footer>
+</body>
+
 </html>
